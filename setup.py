@@ -2,13 +2,13 @@ from distutils.core import setup
 setup(
   name = 'dbsession',
   packages = ['dbsession'],  
-  version = '0.2',      
+  version = '0.4',      
   license='MIT',       
   description = 'The python postgreSQL ORM ',  
   author = 'imwiwiim90',                   
   author_email = 'imwiwiim90@gmail.com',      
   url = 'https://github.com/imwiwiim90/dbsession',   
-  download_url = 'https://github.com/imwiwiim90/dbsession/archive/v_01.tar.gz',    # I explain this later on
+  download_url = 'https://github.com/imwiwiim90/dbsession/archive/v_04.tar.gz',    # I explain this later on
   keywords = ['python', 'postgreSQL', 'ORM', 'psycopg2'],   
   install_requires=[            # I get to this in a second
       ],
