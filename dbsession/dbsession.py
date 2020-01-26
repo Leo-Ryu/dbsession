@@ -46,7 +46,7 @@ class DBSession():
 
     def _unwrap(self, value, wrapper, many=True):
         if wrapper and not hasattr(wrapper, 'fields'):
-            wrapper.fields = DatabaseObject.get_description(wrapper)
+            wrapper.fields = DatabaseObject.get_description(self.connection, wrapper)
 
         if many:
             if wrapper:
@@ -107,19 +107,15 @@ class DatabaseObject:
     
 
     @staticmethod
-    def get_description(dbObject):
-        connection = connection_pool.getconn()
+    def get_description(conn, dbObject):
 
-        cursor = connection.cursor()
+        cursor = conn.cursor()
         cursor.execute(f"SELECT * FROM {dbObject._TABLE_NAME} LIMIT 0")
 
         description = [
             descriptor[0] 
             for descriptor in cursor.description
         ]
-
-        cursor.close()
-        connection_pool.putconn(connection)
 
         return description
 
