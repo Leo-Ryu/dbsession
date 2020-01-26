@@ -18,7 +18,7 @@ Assuming we have a table named `A` with the following estructure
 
 Create an archive `A.py` and create a class for the database abstraction `A` that inherits from `DatabaseObject`. The attribute `_TABLE_NAME` is the database table actual name
 
-```
+```py
 from DBSession import DatabaseObject
 
 TABLE_NAME = 'A'
@@ -39,7 +39,7 @@ Now implement every function associated with this table in the same file. Every 
 - wrapper (Object): The class that represent the table
 - many (bool): Whether the query will return one or many instances
 
-```
+```py
 
 def find_by_id(a_id):
     
@@ -67,7 +67,7 @@ def get_all():
 
 Create a connection to the database using the `DBConnection` class. It receives the pool instance from psycopg2.
 
-```
+```py
 connection_pool = psycopg2.pool.ThreadedConnectionPool(
     MINIMUM_CONNECTION,
     MAXIMUM_CONNECTION,
@@ -83,7 +83,7 @@ db_connection = DBConnection(connection_pool)
 
 Finally, in the main code. To execute the query just create a `DBSession` instance, and call the `A` module functions by using de `query` function
 
-```
+```py
 import A
 
 
