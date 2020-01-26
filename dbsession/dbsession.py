@@ -6,7 +6,7 @@ class DBConnection():
         self.pool = pool 
 
     def get_session(self):
-        return DBSession(pool)
+        return DBSession(self.pool)
 
 class DBSession():
 
