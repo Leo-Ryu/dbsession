@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'dbsession',
   packages = ['dbsession'],  
-  version = '0.1',      
+  version = '0.2',      
   license='MIT',       
   description = 'The python postgreSQL ORM ',  
   author = 'imwiwiim90',                   
