@@ -14,6 +14,7 @@ class DBSession():
         """
         pool (object): psycopg2 pool instance
         """
+        self.pool = pool
         self.connection = pool.getconn()
 
     def query(self, module_function, *query_params):
@@ -41,7 +42,7 @@ class DBSession():
         self.connection.rollback()
 
     def close(self):
-        connection_pool.putconn(self.connection)
+        self.pool.putconn(self.connection)
 
 
     def _unwrap(self, value, wrapper, many=True):
