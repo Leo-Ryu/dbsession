@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/treble-ai/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 3609ade1041066b55a351c371b1b1c9e7e61ba6446ec3716c6efdf928675bd13
+  sha256: 6a375fb6f59629a1def349a50d9775c2cb400238897c38f28cf293b14527fd03
 
 build:
   number: 0
