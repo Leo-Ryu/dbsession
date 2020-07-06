@@ -8,9 +8,9 @@
 
 """Simple Python ORM for PostgresDB."""
 
-from .dbsession import DBConnection
-from .dbsession import DatabaseObject
+from .dbsession import DBConnection, DatabaseObject, DBSession
 
+DBSession
 DBConnection
 DatabaseObject
 
