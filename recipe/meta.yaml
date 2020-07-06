@@ -1,0 +1,44 @@
+{% set name = "dbsession" %}
+{% set version = "0.6.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/treble-ai/{{ name }}/archive/{{ version }}.tar.gz
+  sha256: 3609ade1041066b55a351c371b1b1c9e7e61ba6446ec3716c6efdf928675bd13
+
+build:
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - setuptools
+    - psycopg2
+    # - ujson <=1.35
+
+test:
+  imports:
+    - dbsession
+
+about:
+  home: https://github.com/treble-ai/dbsession
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE.txt
+  summary: Simple ORM for PostgreSQL
+  description: |
+    DBSession gives simplicity, flexibility and order to the abstraction of
+    database tables into python objects. Right now it only supports PostgreSQL
+    with psycopg2.
+  dev_url: https://github.com/treble-ai/dbsession
+
+extra:
+  recipe-maintainers:
+    - andfoy
