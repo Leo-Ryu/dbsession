@@ -42,7 +42,7 @@ def get_description():
 
 
 REQUIREMENTS = [
-    'psycopg2'
+    'psycopg2-binary'
 ]
 
 setup(
