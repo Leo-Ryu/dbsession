@@ -52,9 +52,10 @@ class DBSession():
         self.connection.rollback()
 
     def close(self):
-        cursor = self.connection.cursor()
+        connection = self.connection
+        cursor = connection.cursor()
         cursor.close()
-        self.pool.putconn(self.connection)
+        self.pool.putconn(connection)
 
     def _unwrap(self, value, wrapper, many=True):
         if wrapper and not hasattr(wrapper, 'fields'):
