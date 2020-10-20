@@ -52,6 +52,8 @@ class DBSession():
         self.connection.rollback()
 
     def close(self):
+        cursor = self.connection.cursor()
+        cursor.close()
         self.pool.putconn(self.connection)
 
     def _unwrap(self, value, wrapper, many=True):
