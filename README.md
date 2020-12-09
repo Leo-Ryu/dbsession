@@ -96,3 +96,6 @@ all_a = db_session.query(A.get_all)
 print(all_a)
 # [(1, 'Paul'), (2, 'George')]
 ```
+
+## Reference Docs
+https://docs.contour.so/treble-ai/dbsession/README
